@@ -35,7 +35,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+  // res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+        res.status(200).json({
+        success: true,
+        message: "GearUp Backend is Running Successfully",
+        // data: null,
+      });
 });
 
 app.get("/postman", (_req: Request, res: Response) => {
